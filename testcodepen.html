@@ -1,0 +1,374 @@
+<!-- 
+Exercise II - Add CSS
+Time: 15 Minutes
+
+Add CSS to make the HTML elements match their descriptions. Do not edit this HTML file. ALL of your work will be done in the CSS window to the left.
+-->
+
+
+<!--  
+    Exercise III - Add CSS
+    Time: 30 Minutes
+    
+    Add HTML and CSS to create a webpage for a business (real or imagined). The following are the minimum requirements for your page; feel free to add more HTML or CSS if you have additional time. 
+    
+    HTML requirements:
+    * three divs
+    * a span and a paragraph 
+    * two headers
+    * a link
+    * an image
+    * a list
+    * a class (which should be put on multiple elements)
+    * two ids 
+    
+    CSS requirements:
+    * a tag selector
+    * a class selector
+    * an id selector
+    * use the following attributes: height, width, border, color, background-color, font-size
+    * add margin and padding to two different elements  
+    
+    Stretch Goal: Use online resources to learn a little about the CSS properties of 'display' and 'position'. Incorporate them into your page.
+    -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, minmax(min-content, auto));
+        text-decoration: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* navigation_top_bar and logo */
+
+    #nav_bar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, minmax(min-content, auto));
+        background-color: #212121;
+        border-top: 10px solid #424242;
+        border-bottom: 10px solid #424242;
+    }
+
+    .logo {
+        padding: 10px;
+        padding-left: 50px;
+
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .nav_tags>li {
+        display: inline-block;
+        padding-right: 50px;
+        padding-top: 40px;
+    }
+
+    li>a {
+        text-decoration: none;
+        color: cyan;
+        text-align: right;
+    }
+
+    /* banner */
+
+    #banner {
+        background-image: url("http://www.outfittrends.com/wp-content/uploads/2015/02/10850296_814718895265245_532382522389631489_n.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        padding-bottom: 50px;
+        text-align: right;
+        color: cyan;
+    }
+
+    .banner_text_wrap {
+        background: rgba(0, 0, 0, 0.6);
+        margin-left: 820px;
+    }
+
+    .banner_heading {
+        font-size: 40px;
+        padding-right: 80px;
+        padding-top: 50px;
+    }
+
+    .banner_title {
+        padding-right: 20px;
+    }
+
+    .banner_description {
+        font-size: 19px;
+        padding-right: 50px;
+    }
+
+    .banner_button_wrap {
+        padding-right: 70px;
+        padding-top: 50px;
+    }
+
+    .banner_button {
+        font-size: 28px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: none;
+        color: cyan;
+        width: 200px;
+        height: 70px;
+        border: 1px solid #00b8d4;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    button:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 60px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.5;
+        filter: blur(30px);
+        transform: translateX(-130px) skew(-15deg);
+    }
+
+    button:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.2);
+        width: 30px;
+        height: 100%;
+        left: 30px;
+        top: 0;
+        opacity: 0;
+        filter: blur(30px);
+        transform: translateX(-100px) skew(-15deg);
+    }
+
+    button:hover {
+        background-color: #00838f;
+        cursor: pointer;
+    }
+
+    button:hover:before {
+        transform: translateX(300px) skew(-15deg);
+        opacity: 0;
+        transition: 0.7s;
+    }
+
+    button:hover:after {
+        transform: translateX(300px) skew(-15deg);
+        opacity: 1;
+        transition: 0.7s;
+    }
+
+    /* .product details */
+
+    .product_list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(min-content, auto));
+        grid-template-rows: 1fr;
+        text-align: center;
+    }
+
+    li>img {
+        border-radius: 6px;
+    }
+
+    .product_button {
+        font-size: 16px;
+        width: 100px;
+        height: 50px;
+    }
+
+    .product_button_position {
+        padding-left: 100px;
+        padding-top: 20px;
+    }
+
+    /* Summary */
+
+    .summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(min-content, auto));
+        grid-gap: 50px;
+        text-align: center;
+        padding-left: 50px;
+        padding-right: 180px;
+    }
+
+    .summary_content {
+        text-align: justify;
+    }
+
+    .footer_tags {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(min-content, auto));
+        background-color: #212121;
+        padding-bottom: 30px;
+    }
+
+    .trademark {
+        padding-top: 40px;
+        color: #eee
+    }
+</style>
+<div></div>
+
+<body>
+    <header id="nav_bar">
+        <div class="logo">
+            <img src="https://www.freeiconspng.com/uploads/black-icon-15.png" alt="Logo" width="100" height="100">
+        </div>
+        <nav>
+            <ul class="nav_tags">
+                <li>
+                    <a href="#">Categories</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <header id="banner">
+        <div class="banner_text_wrap">
+            <h1 class="banner_heading">
+                <p class="banner_title">MEN & WOMEN</p>
+                <p>Wedding Dresses</p>
+            </h1>
+            <p class="banner_description"> Wedding is the most momentous occasion in a person’s life regardless of the gender. While wedding womenswear
+                has evolved leaps and bounds, wedding dresses for men have been greatly in demand in the recent decades.</p>
+            <div class="banner_button_wrap">
+                <button class="banner_button" type="button">Love</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="products">
+        <span class="product_list">
+            <ul class="men_pics">
+                <li>
+                    <img src="https://images.pexels.com/photos/883362/pexels-photo-883362.jpeg?auto=compress&cs=tinysrgb&h=750&w=300" alt="male suit">
+                    <p>
+                        Men suit
+                    </p>
+                    <div class="product_button_position">
+                        <button class="banner_button product_button" type="button">Buy</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://i.ebayimg.com/images/g/UkoAAOSw9mpaJjWq/s-l300.jpg" alt="female wedding dress">
+                    <p>
+                        Wedding Dress
+                    </p>
+                    <div class="product_button_position">
+                        <button class="banner_button product_button" type="button">Buy</button>
+                    </div>
+                </li>
+            </ul>
+            <ul class="women_pics">
+                <li>
+                    <img src="https://images2.jiji.ng/5183992_1479230381979_300x300.jpg" alt="female wedding dress">
+                    <p>
+                        Wedding Dress
+                    </p>
+                    <div class="product_button_position">
+                        <button class="banner_button product_button" type="button">Buy</button>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/1300550/pexels-photo-1300550.jpeg?auto=compress&cs=tinysrgb&h=750&w=300" alt="male suit">
+                    <p>
+                        Men suit
+                    </p>
+                    <div class="product_button_position">
+                        <button class="banner_button product_button" type="button">Buy</button>
+                    </div>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <hr>
+    <div class="summary">
+        <div class="about_us">
+            <h3>About Us</h3>
+            <p class="summary_content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, qui tempore reprehenderit quasi dolore illum
+                aliquid! Consequatur quisquam architecto aspernatur harum dicta? Quidem alias nesciunt, id eum ipsam cupiditate
+                corporis.
+            </p>
+        </div>
+        <div class="our_passion">
+            <h3>Our Passion</h3>
+            <p class="summary_content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi excepturi eius quos a consectetur? Dicta, deleniti
+                maiores magnam iure consequatur pariatur reiciendis, quas beatae nostrum, facilis sunt! Quasi, provident
+                harum.
+            </p>
+        </div>
+        <div class="Contact">
+            <h3>Contact Us</h3>
+            <span>
+                <p class="">Address</p>
+                <p class="">Email Contact</p>
+                <p class="">Phone number</p>
+            </span>
+        </div>
+    </div>
+
+    <footer class="footer_tags">
+        <div>
+            <ul class="nav_tags">
+                <li>
+                    <a href="#">Terms & Conditions</a>
+                </li>
+                <li>
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="trademark">
+            <p>
+                <em>
+                    &copy; 2018·
+                    <a href="#">Ahmed ZJ</a>
+                    All rights reserved
+                </em>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
